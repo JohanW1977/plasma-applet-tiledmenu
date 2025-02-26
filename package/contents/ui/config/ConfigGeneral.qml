@@ -532,15 +532,15 @@ LibConfig.FormKCM {
 	LibConfig.Heading {
 		text: i18n("Right Click Menu")
 	}
-	LibConfig.TextField {
+	LibConfig.TextArea {
 		configKey: 'terminalApp'
 		Kirigami.FormData.label: i18n("Terminal")
 	}
-	LibConfig.TextField {
+	LibConfig.TextArea {
 		configKey: 'taskManagerApp'
 		Kirigami.FormData.label: i18n("Task Manager")
 	}
-	LibConfig.TextField {
+	LibConfig.TextArea {
 		configKey: 'fileManagerApp'
 		Kirigami.FormData.label: i18n("File Manager")
 	}
