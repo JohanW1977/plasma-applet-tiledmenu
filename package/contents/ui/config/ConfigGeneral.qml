@@ -377,6 +377,11 @@ LibConfig.FormKCM {
 		text: i18n("Hide Search Field")
 	}
 
+	LibConfig.CheckBox {
+		configKey: 'searchOnTop'
+		text: i18n("Search On Top")
+	}
+
 	LibConfig.SpinBox {
 		configKey: 'searchFieldHeight'
 		Kirigami.FormData.label: i18n("Search Field Height")
@@ -532,7 +537,7 @@ LibConfig.FormKCM {
 	LibConfig.Heading {
 		text: i18n("Right Click Menu")
 	}
-	LibConfig.TextArea {
+	LibConfig.TextArea{
 		configKey: 'terminalApp'
 		Kirigami.FormData.label: i18n("Terminal")
 	}

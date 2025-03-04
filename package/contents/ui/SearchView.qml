@@ -36,7 +36,7 @@ Item {
 	readonly property bool showingAppsCategorically: config.showSearch && appsModel.order == "categories" && showingAppList
 	readonly property bool showSearchField: config.hideSearchField ? !!searchField.text : true
 
-	property bool searchOnTop: false
+	readonly property bool searchOnTop: config.searchOnTop
 
 	function showDefaultView() {
 		var defView = plasmoid.configuration.defaultAppListView
@@ -55,6 +55,7 @@ Item {
 		} else if (defView == 'TilesOnly') {
 			searchView.showTilesOnly()
 		}
+		
 	}
 
 	function showTilesOnly() {
@@ -80,6 +81,7 @@ Item {
 			PropertyChanges {
 				target: searchField
 				anchors.top: searchField.parent.top
+				
 			}
 		},
 		State {
@@ -91,7 +93,8 @@ Item {
 			}
 			PropertyChanges {
 				target: searchField
-				anchors.bottom: searchField.parent.bottom
+				anchors.top: stackViewContainer.bottom
+				
 			}
 		}
 	]
@@ -135,11 +138,13 @@ Item {
 
 			function showAppsAlphabetically() {
 				appsModel.order = "alphabetical"
+				console.log('config search size', stackViewContainer.top, ' this ' , appsView.height)
 				show()
 			}
 
 			function showAppsCategorically() {
 				appsModel.order = "categories"
+				
 				show()
 			}
 
@@ -156,9 +161,10 @@ Item {
 		JumpToLetterView {
 			id: jumpToLetterView
 			visible: false
-
+			
 			function showLetters() {
 				appsModel.order = "alphabetical"
+				
 				show()
 			}
 
@@ -199,14 +205,15 @@ Item {
 			initialItem: appsView
 		}
 	}
-
+    
 
 	SearchField {
 		id: searchField
 		visible: !config.isEditingTile && searchView.showSearchField
 		height: config.searchFieldHeight
+		width: parent.width - 40
 		anchors.left: parent.left
-		anchors.right: parent.right
+		//anchors.right: parent.right 
 
 		listView: stackView.currentItem && stackView.currentItem.listView ? stackView.currentItem.listView : []
 	}
