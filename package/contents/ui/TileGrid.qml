@@ -2,11 +2,11 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
+//import org.kde.draganddrop 2.0
 import "Utils.js" as Utils
 
 DropArea {
 	id: tileGrid
-
 	property int cellSize: 60 * Screen.devicePixelRatio
 	property real cellMargin: 3 * Screen.devicePixelRatio
 	property real cellPushedMargin: 6 * Screen.devicePixelRatio
@@ -48,22 +48,24 @@ DropArea {
 		}
 	}
 
-	//--- Drag and Drop events
-	// onContainsDragChanged: console.log('containsDrag', containsDrag)
-	onEntered: {
+	onEntered: drag => {
 		// console.log('onEntered', drag)
 		dragTick(drag)
 	}
-	onPositionChanged: {
+	onPositionChanged: drag => {
 		// console.log('onPositionChanged', drag)
 		dragTick(drag)
 	}
-	onExited: {
+	onExited: drag => {
 		// console.log('onExited')
 		resetDragHover()
 	}
-	onDropped: {
-		// console.log('onDropped', drop)
+
+
+
+		onDropped: drop => {
+		 console.log('onDropped', addedItem)
+		 dragTick(drop)
 		if (draggedItem) {
 			tileGrid.moveTile(draggedItem, dropHoverX, dropHoverY)
 			tileGrid.resetDrag()
@@ -76,6 +78,10 @@ DropArea {
 			tileGrid.resetDrag()
 		}
 	}
+
+
+	 
+	
 
 	// Drag and Drop functions
 	function resetDragHover() {
@@ -176,9 +182,11 @@ DropArea {
 	// QQuickDropEvent
 	// https://github.com/qt/qtdeclarative/blob/a4aa8d9ade44d75cb5a1d84bd7c1773fadc73095/src/quick/items/qquickdroparea_p.h#L63
 	function dragTick(event) {
-		// console.log('dragTick', event.x, event.y)
-		var dragX = event.x + scrollView.flickableItem.contentX - dropOffsetX
-		var dragY = event.y + scrollView.flickableItem.contentY - dropOffsetY
+		
+		 //console.log('onDragStarted -> ',draggedItem.x, draggedItem.y)
+		 
+		var dragX = event.x - dropOffsetX
+		var dragY = event.y - dropOffsetY
 		var modelX = Math.floor(dragX / cellBoxSize)
 		var modelY = Math.floor(dragY / cellBoxSize)
 		var globalPoint = popup.mapFromItem(tileGrid, event.x, event.y)
@@ -186,12 +194,15 @@ DropArea {
 		scrollUpArea.checkContains(event)
 		scrollDownArea.checkContains(event)
 
+		 //moveTile(draggedItem,dragX,dragY)
+
 		if (draggedItem) {
 		} else if (addedItem) {
 		} else if (event && event.hasUrls && event.urls) {
 			if (event.keys && event.keys.indexOf('favoriteId') >= 0) {
 				var url = event.getDataAsString('favoriteId')
 				url = Utils.parseDropUrl(url)
+				//console.log('onDragStarted -> ', JSON.stringify(draggedItem))
 			} else {
 				var url = event.urls[0]
 				// console.log('new addedItem', event.urls, url)

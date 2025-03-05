@@ -2,11 +2,12 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.plasma.core as PlasmaCore
 
+
 Item {
 	id: tileItem
 	x: modelData.x * cellBoxSize
 	y: modelData.y * cellBoxSize
-	width: modelData.w * cellBoxSize
+	width: modelData.w * cellBoxSize 
 	height: modelData.h * cellBoxSize
 
 	function fixCoordinateBindings() {
@@ -72,7 +73,7 @@ Item {
 		}
 
 		drag.target: plasmoid.configuration.tilesLocked ? undefined : tileItem
-		// drag.onActiveChanged: console.log('drag.active', drag.active)
+	    drag.onActiveChanged: console.log('drag.active', drag.active)
 
 		// This MouseArea will spam "QQuickItem::ungrabMouse(): Item is not the mouse grabber."
 		// but there's no other way of having a clickable drag area.
@@ -96,13 +97,14 @@ Item {
 
 	// We use this drag pattern to use the internal drag with events.
 	// https://stackoverflow.com/a/24729837/947742
-	readonly property bool dragActive: tileMouseArea.drag.active
+	property bool dragActive: tileMouseArea.drag.active
 	onDragActiveChanged: function(dragActive) {
-		if (dragActive) {
-			// console.log("drag started")
-			// console.log('onDragStarted', JSON.stringify(modelData), index, tileModel.length)
+		console.log("drag active", tileMouseArea.drag.active , 'var ' , dragActive)
+		if (tileMouseArea.drag.active ) {
+			console.log("drag started")
+		    console.log('onDragStarted', JSON.stringify(modelData), index, tileModel.length)
 			tileGrid.startDrag(index)
-			// tileGrid.dropOffsetX = 0
+			 tileGrid.dropOffsetX = 0
 			// tileGrid.dropOffsetY = 0
 			tileItem.z = 1
 			Drag.start()
