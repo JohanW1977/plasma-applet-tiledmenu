@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: 2019-07-12 11:44-0300\n"
 "Last-Translator: Thiago Masato Costa Sueto <herzenschein@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -254,6 +254,22 @@ msgstr "Misto (Lançador de aplicativos)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "Por categorias (Menu de aplicativos / Painel de aplicativos)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Gerenciador de tarefas"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Gerenciador de arquivos"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid ""
 "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open "
@@ -266,21 +282,9 @@ msgstr ""
 msgid "System Info"
 msgstr "Informações do sistema"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Gerenciador de tarefas"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Configurações do sistema"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Gerenciador de arquivos"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

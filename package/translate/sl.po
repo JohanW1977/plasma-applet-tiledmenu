@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ugo Ugowsky <ugowsky@gmail.com>\n"
 "Language-Team: LANGUAGE <info@duh-casa.si>\n"
@@ -252,6 +252,22 @@ msgstr "Združeno (zaganjalnik programov)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "Razdeli v kategorije (meni programov / nadzorna plošča)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Upravitelj opravil"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Upravitelj datotek"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
 msgstr "Ko ima ta vtičnik določeno bližnjico, npr. 'Alt+F1', se bo Meni s ploščicami odprl tudi s klikom na ⊞ Windows / Meta tipko."
@@ -260,21 +276,9 @@ msgstr "Ko ima ta vtičnik določeno bližnjico, npr. 'Alt+F1', se bo Meni s plo
 msgid "System Info"
 msgstr "Podatki o sistemu"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Upravitelj opravil"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Nastavitve sistema"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Upravitelj datotek"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

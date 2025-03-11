@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Dika Muhamad A. <ardumpl@gmail.com>\n"
 "Language-Team: Indonesia <LL@li.org>\n"
@@ -252,6 +252,22 @@ msgstr "Digabung (Peluncur Aplikasi)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "Pisahkan dalam Kategori (Menu Aplikasi / Dasbor)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Pemantau Tugas"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Manajer Berkas"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
 msgstr "Jika gawit ini memiliki tombol pintasan global (seperti Alt+F1), Plasma akan membuka gawit ini dengan tombol Super/Windows"
@@ -260,21 +276,9 @@ msgstr "Jika gawit ini memiliki tombol pintasan global (seperti Alt+F1), Plasma 
 msgid "System Info"
 msgstr "Info Sistem"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Pemantau Tugas"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Setelan Sistem"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Manajer Berkas"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: 2020-09-08 15:41-0300\n"
 "Last-Translator: QUASAR FREAK <quasarfreak@gmail.com>\n"
 "Language-Team: Spanish <LL@li.org>\n"
@@ -252,6 +252,22 @@ msgstr "Fusionado (Lanzador de aplicaciones)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "Dividir en categorías (Menú de aplicaciones/Salpicadero)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Gestor de tareas"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Gestor de archivos"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
 msgstr "Cuando este elemento gráfico tenga asignado un atajo global, como 'Alt+F1', Plasma abrirá este menú con la tecla ⊞ Windows/Meta."
@@ -260,21 +276,9 @@ msgstr "Cuando este elemento gráfico tenga asignado un atajo global, como 'Alt+
 msgid "System Info"
 msgstr "Información del sistema"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Gestor de tareas"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Preferencias del sistema"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Gestor de archivos"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

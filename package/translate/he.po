@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: 2021-03-15 12:27+0200\n"
 "Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-he@kde.org>\n"
@@ -257,6 +257,22 @@ msgstr "משולבות (מפעיל יישומים)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "מפוצלות לקטגוריות (תפריט היישומים / לוח מחוונים)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "מסוף"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "מנהל משימות"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "מנהל קבצים"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid ""
 "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open "
@@ -269,21 +285,9 @@ msgstr ""
 msgid "System Info"
 msgstr "מידע על המערכת"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "מסוף"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "מנהל משימות"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "הגדרות מערכת"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "מנהל קבצים"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

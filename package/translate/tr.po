@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: 2020-07-07 16:59+0300\n"
 "Last-Translator: Cihan Alkan <cihanalk@gmail.com>\n"
 "Language-Team: Turkish <LL@li.org>\n"
@@ -253,6 +253,22 @@ msgstr "Birleştirilmiş (Uygulama Başlatıcı)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "Kategorilere Böl (Uygulama Menüsü / Gösterge Tablosu)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Uçbirim"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Görev Yöneticisi"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Dosya Yöneticisi"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid ""
 "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open "
@@ -265,21 +281,9 @@ msgstr ""
 msgid "System Info"
 msgstr "Sistem Bilgisi"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Uçbirim"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Görev Yöneticisi"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Sistem Ayarları"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Dosya Yöneticisi"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

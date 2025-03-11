@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl\n"
@@ -252,6 +252,22 @@ msgstr "Scalony (Menu programów)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "Podziej na Kategorie (Menu programów / Tablica)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Menadżer zadań"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Menedżer plików"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
 msgstr "Kiedy ten widżet ma ustawiony skrót globalny taki jak 'ALT+F!' Plazma otworzy to menu przy użyciu przycisku ⊞ Windows / przycisku 'Meta'"
@@ -260,21 +276,9 @@ msgstr "Kiedy ten widżet ma ustawiony skrót globalny taki jak 'ALT+F!' Plazma 
 msgid "System Info"
 msgstr "Informacje systemowe"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Menadżer zadań"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Ustawienia systemowe"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Menedżer plików"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

@@ -140,11 +140,11 @@ PlasmoidItem {
 		Layout.preferredWidth: config.popupWidth
 		Layout.preferredHeight: config.popupHeight
 
-		// Layout.minimumHeight: 600 // For quickly testing as a desktop widget
+		 //Layout.minimumHeight: 900 // For quickly testing as a desktop widget
 		// Layout.minimumWidth: 800
 
 		onWidthChanged: {
-			// console.log('popup.size', width, height, 'width')
+			console.log('popup.size', width, height, 'width')
 			// resizeToFit.run()
 		}
 		onHeightChanged: {

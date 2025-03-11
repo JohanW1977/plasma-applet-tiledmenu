@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: 2022-04-08 11:44+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -254,6 +254,22 @@ msgstr "Samengevoegd (programmastarter)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "Opgesplitst in categorieën (programmamenu/overzicht)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Terminalvenster"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Systeemmonitor"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Bestandsbeheerder"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid ""
 "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open "
@@ -266,21 +282,9 @@ msgstr ""
 msgid "System Info"
 msgstr "Systeeminformatie"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Terminalvenster"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Systeemmonitor"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Systeeminstellingen"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Bestandsbeheerder"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

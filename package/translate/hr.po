@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Vladimir Mikulic <vladimir.mikulic2@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -252,6 +252,22 @@ msgstr "Spojeno (Pokretač Aplikacija)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "Razdvoji u Kategorije (Izbornik Aplikacija / Nadzorna ploča)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Upravitelj Zadataka"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Upravitelj Datoteka"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
 msgstr "Kada ovaj widget ima postavljen globalni prečac, kao 'Alt+F1', Plasma ce otvorit Izbornik sa ⊞ Windows / Meta tipkom."
@@ -260,21 +276,9 @@ msgstr "Kada ovaj widget ima postavljen globalni prečac, kao 'Alt+F1', Plasma c
 msgid "System Info"
 msgstr "Informacije o Sistemu"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Upravitelj Zadataka"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Postavke Sistema"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Upravitelj Datoteka"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

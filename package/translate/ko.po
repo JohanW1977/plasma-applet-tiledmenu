@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: 2018-12-19 11:26+0900\n"
 "Last-Translator: Hakyong Do <crazyraven@gmail.com>\n"
 "Language-Team: Korean\n"
@@ -252,6 +252,22 @@ msgstr "병합 (프로그램 실행)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "분할 (프로그램 메뉴 / 대시보드)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "터미널"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "작업 관리자"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "파일 관리자"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
 msgstr "이 위젯에 'Alt+F1' 와 같은 전역 단축키가 설정되어 있으면, Plasma 는 ⊞ Windows / Meta 키를 통해 메뉴를 열 것입니다."
@@ -260,21 +276,9 @@ msgstr "이 위젯에 'Alt+F1' 와 같은 전역 단축키가 설정되어 있�
 msgid "System Info"
 msgstr "시스템 정보"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "터미널"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "작업 관리자"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "시스템 설정"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "파일 관리자"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

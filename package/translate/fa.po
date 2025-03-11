@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: 2024-01-02 15:00-0330\n"
 "Last-Translator: Alireza Rashidi <alirezarashidigoorabi@gmail.com>\n"
 "Language-Team: Persian\n"
@@ -253,6 +253,22 @@ msgstr "ترکیب شده(اجراکننده نرم‌افزار)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "تقسیم بر اساس دسته‌بندی(اجراکننده نرم‌افزار/ پیشخوان)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "ترمینال"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "مدیریت وظایف"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "مدیریت رسانه"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
 msgstr "هنگامی که این ویجت دارای یک میانبر سیستمی، مانند 'Alt+F1' است ، پلاسما این منو را فقط با کلید ⊞ ویندوز / متا باز میکند."
@@ -261,21 +277,9 @@ msgstr "هنگامی که این ویجت دارای یک میانبر سیست�
 msgid "System Info"
 msgstr "درباره سیستم"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "ترمینال"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "مدیریت وظایف"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "تنظیمات سیستمی"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "مدیریت رسانه"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ruman Gerst <rumangerst@gmail.com>\n"
 "Language-Team: German <LL@li.org>\n"
@@ -252,6 +252,22 @@ msgstr "Vereinigt (Anwendungsstarter)"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "In Kategorien unterteilen (Anwendungsmenü / Dashboard)"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "Taskmanager"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "Dateiverwaltung"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
 msgstr "Wenn für dieses Widget ein globales Tastenkürzel wie 'Alt+F1' festgelegt ist, wird Plasma dieses Menu mit der ⊞ Windows / Meta-Taste öffnen"
@@ -260,21 +276,9 @@ msgstr "Wenn für dieses Widget ein globales Tastenkürzel wie 'Alt+F1' festgele
 msgid "System Info"
 msgstr "Systeminformationen"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "Terminal"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "Taskmanager"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "Systemeinstellungen"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "Dateiverwaltung"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."

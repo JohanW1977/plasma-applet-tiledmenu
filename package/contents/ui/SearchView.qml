@@ -76,10 +76,11 @@ Item {
 			when: searchOnTop
 			PropertyChanges {
 				target: stackViewContainer
-				anchors.topMargin: searchField.visible ? searchField.height : 0
+				anchors.topMargin: searchField.visible ? searchField.height: 0
 			}
 			PropertyChanges {
 				target: searchField
+				//anchors.top: stackViewContainer.bottom
 				anchors.top: searchField.parent.top
 				
 			}

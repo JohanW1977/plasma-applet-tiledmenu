@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2025-02-25 20:49+1100\n"
 "PO-Revision-Date: 2022-08-21 00:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <kde-i18n-doc@kde.org>\n"
@@ -254,6 +254,22 @@ msgstr "混在一起（同「應用程式啟動器」）"
 msgid "Split into Categories (Application Menu / Dashboard)"
 msgstr "依類別分開（同「應用程式選單」或「應用程式儀表板」）"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Terminal"
+msgstr "終端機"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "Task Manager"
+msgstr "工作管理員"
+
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+msgid "File Manager"
+msgstr "檔案管理員"
+
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid ""
 "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open "
@@ -266,21 +282,9 @@ msgstr ""
 msgid "System Info"
 msgstr "系統資訊"
 
-#: ../contents/ui/main.qml
-msgid "Terminal"
-msgstr "終端機"
-
-#: ../contents/ui/main.qml
-msgid "Task Manager"
-msgstr "工作管理員"
-
 #: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
 msgid "System Settings"
 msgstr "系統設定"
-
-#: ../contents/ui/main.qml
-msgid "File Manager"
-msgstr "檔案管理員"
 
 #: ../contents/ui/main.qml
 msgid "Edit Applications..."
