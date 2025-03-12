@@ -39,6 +39,7 @@ Item {
 	readonly property bool searchOnTop: config.searchOnTop
 
 	function showDefaultView() {
+		console.log('asd ' , plasmoid.configuration.defaultAppListView)
 		var defView = plasmoid.configuration.defaultAppListView
 		if (defView == 'Alphabetical') {
 			appsView.showAppsAlphabetically()
@@ -61,8 +62,11 @@ Item {
 	function showTilesOnly() {
 		if (!showingAppList) {
 			// appsView.show(stackView.noTransition)
+		
 			appsView.show()
+			
 		}
+		plasmoid.configuration.defaultAppListView = 'TilesOnly'
 		config.showSearch = false
 	}
 
@@ -80,7 +84,6 @@ Item {
 			}
 			PropertyChanges {
 				target: searchField
-				//anchors.top: stackViewContainer.bottom
 				anchors.top: searchField.parent.top
 				
 			}
@@ -94,7 +97,7 @@ Item {
 			}
 			PropertyChanges {
 				target: searchField
-				anchors.top: stackViewContainer.bottom
+				anchors.top: stackViewContainerplasmoid.configuration.defaultAppListView.bottom
 				
 			}
 		}
@@ -140,11 +143,13 @@ Item {
 			function showAppsAlphabetically() {
 				appsModel.order = "alphabetical"
 				console.log('config search size', stackViewContainer.top, ' this ' , appsView.height)
+				plasmoid.configuration.defaultAppListView = 'Alphabetical'
 				show()
 			}
 
 			function showAppsCategorically() {
 				appsModel.order = "categories"
+				plasmoid.configuration.defaultAppListView = 'Categories'
 				
 				show()
 			}

@@ -144,7 +144,7 @@ PlasmoidItem {
 		// Layout.minimumWidth: 800
 
 		onWidthChanged: {
-			console.log('popup.size', width, height, 'width')
+			//console.log('popup.size', width, height, 'width')
 			// resizeToFit.run()
 		}
 		onHeightChanged: {
