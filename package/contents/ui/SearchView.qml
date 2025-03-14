@@ -108,6 +108,8 @@ Item {
 		id: stackViewContainer
 		anchors.fill: parent
 
+	     
+
 		SearchResultsView {
 			id: searchResultsView
 			visible: false
@@ -121,7 +123,9 @@ Item {
 					searchResultsView.filterViewOpen = false
 				}
 			}
-
+            
+            
+          
 			onVisibleChanged: {
 				if (!visible) { // !stackView.currentItem
 					search.query = ""

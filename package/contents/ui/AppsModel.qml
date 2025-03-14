@@ -12,6 +12,9 @@ Item {
 
 	property string order: "categories"
 	onOrderChanged: allAppsModel.refresh()
+    
+
+
 
 	signal refreshing()
 	signal refreshed()
@@ -30,7 +33,7 @@ Item {
 		if (rootModel.recentOrdering == 0) {
 			return i18n("Recent Apps")
 		} else { // == 1
-			return i18n("Most Used")
+			return i18n("Most Used ")
 		}
 	}
 	readonly property string recentAppsSectionKey: 'RECENT_APPS'
@@ -183,7 +186,7 @@ Item {
 			
 			Item {
 				Component.onCompleted: {
-					// console.log('debouncedRefreshRecentApps', index)
+					 //console.log('debouncedRefreshRecentApps', index)
 					if (plasmoid.configuration.showRecentApps) {
 						debouncedRefreshRecentApps.restart()
 					}
@@ -335,6 +338,7 @@ Item {
 				// Overwrite the exisiting items.
 				for (var i = 0; i < recentAppList.length; i++) {
 					var item = recentAppList[i]
+					console.log('item ', i , item) 
 					list[i] = item
 					set(i, item)
 				}
@@ -356,7 +360,7 @@ Item {
 			if (categoryModel) {
 				parseModel(appList, categoryModel)
 			} else {
-				console.log('allAppsModel.getCategory', rootIndex, categoryModel, 'is null')
+				//console.log('allAppsModel.getCategory', rootIndex, categoryModel, 'is null')
 			}
 			
 			for (var i = 0; i < appList.length; i++) {

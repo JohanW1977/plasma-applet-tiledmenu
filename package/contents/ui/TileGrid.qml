@@ -64,11 +64,14 @@ DropArea {
 
 
 		onDropped: drop => {
-		 console.log('onDropped', addedItem)
+		 console.log('onDropped', draggedItem)
 		 dragTick(drop)
 		if (draggedItem) {
-			tileGrid.moveTile(draggedItem, dropHoverX, dropHoverY)
-			tileGrid.resetDrag()
+			if (canDrop) {
+				tileGrid.moveTile(draggedItem, dropHoverX, dropHoverY)
+			    tileGrid.resetDrag()
+			}
+			
 			// event.accept(Qt.MoveAction)
 		} else if (addedItem) {
 			addedItem.x = dropHoverX
