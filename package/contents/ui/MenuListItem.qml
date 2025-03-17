@@ -4,6 +4,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.plasma.components as PlasmaComponents3
 import org.kde.draganddrop as DragAndDrop
 
+
 AppToolButton {
 	id: itemDelegate
 
@@ -28,10 +29,33 @@ AppToolButton {
 
 	// We need to look at the js list since ListModel doesn't support item's with non primitive propeties (like an Image).
 	property bool modelListPopulated: !!listView.model.list && listView.model.list.length - 1 >= index
-	property var iconInstance: modelListPopulated && listView.model.list[index] ? listView.model.list[index].icon : ""
+	//property var iconInstance: modelListPopulated && listView.model.list[index] ? listView.model.list[index].icon : ""
+	property var iconInstance: {
+    if (modelListPopulated && listView.model.list[index]) {
+        var item = listView.model.list[index];
+        // Try to access the icon in different ways
+        if (item.icon !== undefined) {
+            return item.icon;
+        } else if (item.decoration !== undefined) {
+            return item.decoration;
+        } else if (item.iconName !== undefined) {
+            return Qt.icon.fromTheme(item.iconName);
+        } else {
+            console.log("Debug - available properties:", Object.keys(item));
+            return "";
+        }
+    } else {
+        return "";
+    }
+}
+     Kirigami.Icon {
+		id: testname
+        source: iconName  // This uses the theme icon name directly
+    }
 	Connections {
 		target: listView.model
 		function onRefreshed() {
+			
 			// We need to manually trigger an update when we update the model without replacing the list.
 			// Otherwise the icon won't be in sync.
 			itemDelegate.iconInstance = listView.model.list[index] ? listView.model.list[index].icon : ""
@@ -46,6 +70,7 @@ AppToolButton {
 	property bool dragEnabled: launcherUrl
 	function initDrag(mouse) {
 		pressX = mouse.x
+		console.log("init drag")
 		pressY = mouse.y
 	}
 	function shouldStartDrag(mouse) {
@@ -55,18 +80,22 @@ AppToolButton {
 	}
 	function startDrag() {
 		// Note that we fallback from url to favoriteId for "Most Used" apps.
-		var dragIcon = iconInstance
+		
+		var dragIcon = iconSource
+		console.log("start drag ", dragHelper.defaultIcon , dragIcon)
 		if (typeof dragIcon === "string") {
+			//console.log("start drag ",dragHelper.defaultIcon)
 			// startDrag must use QIcon. See Issue #75.
-			// dragIcon = dragHelper.defaultIcon
-			dragIcon = null
+		  //   dragIcon = dragHelper.defaultIcon
+			//dragIcon = null
 		}
 		// console.log('startDrag', widget, model.url, "favoriteId", model.favoriteId)
 		// console.log('    iconInstance', iconInstance)
 		// console.log('    dragIcon', dragIcon)
-		if (dragIcon) {
+		//if (dragIcon) {
+			
 			dragHelper.startDrag(widget, model.url || model.favoriteId, dragIcon, "favoriteId", model.favoriteId)
-		}
+		//}
 
 		resetDragState()
 	}
@@ -75,6 +104,7 @@ AppToolButton {
 		pressY = -1
 	}
 	onPressed: function(mouse) {
+		console.log("click menu ", model.iconName)
 		if (mouse.buttons & Qt.LeftButton) {
 			initDrag(mouse)
 		}
@@ -110,7 +140,7 @@ AppToolButton {
 
 				// visible: iconsEnabled
 
-				animated: false
+				animated: true
 				// usesPlasmaTheme: false
 				source: itemDelegate.iconName || itemDelegate.iconInstance
 			}
