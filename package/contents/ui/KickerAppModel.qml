@@ -56,7 +56,7 @@ Kicker.FavoritesModel {
 				return app
 			}
 		}
-		console.log('getApp', url, 'no index')
+		//console.log('getApp', url, 'no index')
 		return null
 	}
 	function runApp(url) {

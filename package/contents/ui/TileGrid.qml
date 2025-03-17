@@ -64,13 +64,14 @@ DropArea {
 
 
 		onDropped: drop => {
-		 console.log('onDropped', draggedItem)
+		 //console.log('onDropped', draggedItem)
 		 dragTick(drop)
+		if (canDrop) {
 		if (draggedItem) {
-			if (canDrop) {
+			
 				tileGrid.moveTile(draggedItem, dropHoverX, dropHoverY)
 			    tileGrid.resetDrag()
-			}
+			
 			
 			// event.accept(Qt.MoveAction)
 		} else if (addedItem) {
@@ -79,7 +80,11 @@ DropArea {
 			tileGrid.tileModel.push(addedItem)
 			tileGrid.tileModelChanged()
 			tileGrid.resetDrag()
+			
 		}
+		}
+		tileGrid.resetDrag()
+		
 	}
 
 
@@ -404,7 +409,7 @@ DropArea {
 	QQC2.ScrollView {
 		id: scrollView
 		anchors.fill: parent
-
+        //Note to self need to look at this errors on flickable and viewport
 		readonly property int scrollTop: flickableItem ? flickableItem.contentY : 0
 		readonly property int scrollHeight: flickableItem ? flickableItem.contentHeight : 0
 		readonly property int scrollTopAtBottom: viewport ? scrollHeight - viewport.height : 0

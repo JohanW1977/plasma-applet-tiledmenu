@@ -338,7 +338,7 @@ Item {
 				// Overwrite the exisiting items.
 				for (var i = 0; i < recentAppList.length; i++) {
 					var item = recentAppList[i]
-					console.log('item ', i , item) 
+					//console.log('item ', i , item) 
 					list[i] = item
 					set(i, item)
 				}
@@ -354,13 +354,13 @@ Item {
 			var modelIndex = rootModel.index(rootIndex, 0)
 			var categoryLabel = rootModel.data(modelIndex, Qt.DisplayRole)
 			var categoryIcon = rootModel.data(modelIndex, Qt.DecorationRole)
-			// console.log('categoryLabel', categoryLabel, categoryIcon)
+			 //console.log('categoryLabel1', categoryLabel, categoryIcon)
 			var categoryModel = rootModel.modelForRow(rootIndex)
 			var appList = []
 			if (categoryModel) {
 				parseModel(appList, categoryModel)
 			} else {
-				//console.log('allAppsModel.getCategory', rootIndex, categoryModel, 'is null')
+				console.log('allAppsModel.getCategory', rootIndex, categoryModel, 'is null')
 			}
 			
 			for (var i = 0; i < appList.length; i++) {

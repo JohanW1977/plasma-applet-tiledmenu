@@ -67,7 +67,7 @@ Item {
 		}
 	}
 	function removeDefaultFilter(runnerId) {
-		console.log(JSON.stringify(plasmoid.configuration.searchDefaultFilters))
+		//console.log(JSON.stringify(plasmoid.configuration.searchDefaultFilters))
 		var i = defaultFilters.indexOf(runnerId)
 		if (i >= 0) {
 			var l = plasmoid.configuration.searchDefaultFilters

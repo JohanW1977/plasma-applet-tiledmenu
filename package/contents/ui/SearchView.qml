@@ -39,7 +39,7 @@ Item {
 	readonly property bool searchOnTop: config.searchOnTop
 
 	function showDefaultView() {
-		console.log('asd ' , plasmoid.configuration.defaultAppListView)
+		//console.log('asd ' , plasmoid.configuration.defaultAppListView)
 		var defView = plasmoid.configuration.defaultAppListView
 		if (defView == 'Alphabetical') {
 			appsView.showAppsAlphabetically()
@@ -146,7 +146,7 @@ Item {
 
 			function showAppsAlphabetically() {
 				appsModel.order = "alphabetical"
-				console.log('config search size', stackViewContainer.top, ' this ' , appsView.height)
+				//console.log('config search size', stackViewContainer.top, ' this ' , appsView.height)
 				plasmoid.configuration.defaultAppListView = 'Alphabetical'
 				show()
 			}

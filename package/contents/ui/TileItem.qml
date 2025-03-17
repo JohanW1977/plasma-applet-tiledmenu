@@ -73,7 +73,7 @@ Item {
 		}
 
 		drag.target: plasmoid.configuration.tilesLocked ? undefined : tileItem
-	    drag.onActiveChanged: console.log('drag.active', drag.active)
+	    //drag.onActiveChanged: console.log('drag.active', drag.active)
 
 		// This MouseArea will spam "QQuickItem::ungrabMouse(): Item is not the mouse grabber."
 		// but there's no other way of having a clickable drag area.
@@ -101,8 +101,8 @@ Item {
 	onDragActiveChanged: {
 		//console.log("drag active", tileMouseArea.drag.active , 'var ' , dragActive)
 		if (dragActive) {
-			console.log("drag started")
-		    console.log('onDragStarted', JSON.stringify(modelData), index, tileModel.length, modelData)
+			//console.log("drag started")
+		    //console.log('onDragStarted', JSON.stringify(modelData), index, tileModel.length, modelData)
 			tileGrid.startDrag(index)
 			 tileGrid.dropOffsetX = 0
 			// tileGrid.dropOffsetY = 0
