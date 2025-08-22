@@ -84,7 +84,7 @@ Item {
 				if (tileEditorView && tileEditorView.tile) {
 					openTileEditor()
 				} else if (modelData.url) {
-					appsModel.tileGridModel.runApp(modelData.url)
+					appsModel.tileGridModel.runApp(modelData.url)									//launch app from tilegrid
 				}
 			} else if (mouse.button == Qt.RightButton) {
 				contextMenu.open(mouse.x, mouse.y)
