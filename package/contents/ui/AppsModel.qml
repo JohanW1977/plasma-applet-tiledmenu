@@ -6,7 +6,7 @@ Item {
 	property alias rootModel: rootModel
 	property alias allAppsModel: allAppsModel
 	property alias powerActionsModel: powerActionsModel
-	property alias favoritesModel: favoritesModel
+	property alias favoritesModel: rootModel.favoritesModel				//mofified for Plasma 6.4+
 	property alias tileGridModel: tileGridModel
 	property alias sidebarModel: sidebarModel
 
