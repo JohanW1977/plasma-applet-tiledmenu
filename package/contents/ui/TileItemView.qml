@@ -71,7 +71,7 @@ Rectangle {
 		anchors.verticalCenter: parent.verticalCenter
 		anchors.horizontalCenter: parent.horizontalCenter
 		// property int size: 72 // Just a default, overriden in State change
-		property int size: Math.min(parent.width, parent.height) / 2
+		property int size: Math.min(parent.width, parent.height) / 2					//this is where the iconsize is calculated, but it's to big !!!!!! > binding loop??
 		width: appObj.showIcon ? size : 0
 		height: appObj.showIcon ? size : 0
 		anchors.fill: appObj.iconFill ? parent : null
