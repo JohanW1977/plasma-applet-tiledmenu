@@ -15,6 +15,15 @@ A menu based on Windows 10's Start Menu.
     * Labeling Groups of Tiles + Move Groups of Tiles + Sorting items in the group
 * Does not support (Win10):
     * Tile Groups ("Folders")
+      
+## Bugs
+
+* If "Icons" are selected for the tiles, the size is to big, and won't resize to fit the tilesize. jpg's/png do resize fine.
+* Search wil always be on top (even when on top is disabled in the settings)
+* When you modify something in the settings, the font/letter size in de 'applist' will reset to 36px
+* Modifying the width of the applist window (alfabetical/cathegories) is ok, but the with of the edit tiles window will not follow the with (it's in the sam window)
+* "Tiles only" works, but the pannel width remains the same. It should Shrink to the max. width
+
 
 ## Screenshots
 
