@@ -9,9 +9,13 @@
 			{
 				"Email": "bruce@passioncomputing.com.au",
 				"Name": "Bruce Andrewartha"
+			},
+			{
+				"Email": "wauters.johan@telenet.be",
+				"Name": "Johan Wauters"
 			}
 		],
-		"BugReportUrl": "https://github.com/firefly75/plasma-applet-tiledmenu/issues",
+		"BugReportUrl": "https://github.com/JohanW1977/plasma-applet-tiledmenu/issues",
 		"Category": "Application Launchers",
 		"Description": "A menu based on Windows 10's Start Menu.",
 		"Description[es]": "Menú basado en el menú de inicio de Windows 10",
@@ -44,8 +48,8 @@
 		"Name[sl]": "Meni s ploščicami",
 		"Name[tr]": "Döşeli Menü",
 		"Name[zh_TW]": "方塊磚選單",
-		"Version": "46",
-		"Website": "https://github.com/firefly75/plasma-applet-tiledmenu"
+		"Version": "v2025.08.22",
+		"Website": "https://github.com/JohanW1977/plasma-applet-tiledmenu"
 	},
 	"X-Plasma-API-Minimum-Version": "6.0",
 	"X-Plasma-Provides": [
