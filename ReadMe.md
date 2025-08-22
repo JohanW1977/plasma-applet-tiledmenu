@@ -18,7 +18,7 @@ A menu based on Windows 10's Start Menu.
 
 ## Screenshots
 
-![](https://i.imgur.com/rf6dI9Q.png)
+<img width="1719" height="851" alt="image" src="https://github.com/user-attachments/assets/bd99a0be-7956-4c7c-8ed8-b5d196a30cf9" />
 
 ## Theming
 
