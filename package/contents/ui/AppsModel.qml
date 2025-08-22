@@ -13,9 +13,6 @@ Item {
 	property string order: "categories"
 	onOrderChanged: allAppsModel.refresh()
     
-
-
-
 	signal refreshing()
 	signal refreshed()
 
