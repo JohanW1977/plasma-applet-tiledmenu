@@ -32,7 +32,7 @@
 		"Description[tr]": "Windows 10'un Başlat Menüsü'nü temel alan bir menü.",
 		"Description[zh_TW]": "一個基於 Windows 10 開始功能表的選單。",
 		"Icon": "start-here-kde",
-		"Id": "com.github.tryllian.tiledmenu",
+		"Id": "com.github.JohanW1977.tiledmenu",
 		"License": "GPL-2.0+",
 		"Name": "Tiled Menu",
 		"Name[es]": "Menú con Baldosas",
@@ -48,7 +48,7 @@
 		"Name[sl]": "Meni s ploščicami",
 		"Name[tr]": "Döşeli Menü",
 		"Name[zh_TW]": "方塊磚選單",
-		"Version": "v2025.08.22",
+		"Version": "47",
 		"Website": "https://github.com/JohanW1977/plasma-applet-tiledmenu"
 	},
 	"X-Plasma-API-Minimum-Version": "6.0",
