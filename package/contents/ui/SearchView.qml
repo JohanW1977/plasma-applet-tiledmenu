@@ -97,7 +97,8 @@ Item {
 			}
 			PropertyChanges {
 				target: searchField
-				anchors.top: stackViewContainerplasmoid.configuration.defaultAppListView.bottom
+				//anchors.top: stackViewContainerplasmoid.configuration.defaultAppListView.bottom
+				anchors.top: stackViewContainer.bottom
 				
 			}
 		}
