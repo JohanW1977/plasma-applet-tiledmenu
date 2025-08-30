@@ -18,12 +18,13 @@ A menu based on Windows 10's Start Menu.
       
 ## Bugs
 
-* If "Icons" are selected for the tiles, the size is to big, and won't resize to fit the tilesize. jpg's/png do resize fine.
-* Search wil always be on top (even when on top is disabled in the settings)
-* When you modify something in the settings, the font/letter size in de 'applist' will reset to 36px
-* Modifying the width of the applist window (alfabetical/cathegories) is ok, but the with of the edit tiles window will not follow the with (it's in the sam window)
-* "Tiles only" works, but the pannel width remains the same. It should Shrink to the max. width
+* Search wil always be on top (even when on top is disabled in the settings).
+* Switching between "Alphabetical" / "Cathegories" / "Tiles only" initially works, but the pannel width doesn't update after reboot . It should Shrink to the max. width.
+* On my Intel UHD 630 sometimes the menu scales badly (with external monitor and dockingstation) > Driver issue??
 
+## Still To Add
+* Group Tiles.
+* When dragging tiles over grid, other tiles should 'make place / move' for dragged tile.
 
 ## Screenshots
 
