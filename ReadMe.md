@@ -25,6 +25,7 @@ A menu based on Windows 10's Start Menu.
 ## Still To Add
 * Group Tiles.
 * When dragging tiles over grid, other tiles should 'make place / move' for dragged tile.
+* Tiles with shortcuts to files (not apps)
 
 ## Screenshots
 
