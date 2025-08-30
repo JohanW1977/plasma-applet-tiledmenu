@@ -19,7 +19,7 @@ A menu based on Windows 10's Start Menu.
 ## Bugs
 
 * Search wil always be on top (even when on top is disabled in the settings).
-* Switching between "Alphabetical" / "Cathegories" / "Tiles only" initially works, but the pannel width doesn't update after reboot . It should Shrink to the max. width.
+* Switching between "Alphabetical" / "Cathegories" / "Tiles only" initially works, but the pannel width doesn't update after reboot . It should shrink/expand to the max. width.
 * On my Intel UHD 630 sometimes the menu scales badly (with external monitor and dockingstation) > Driver issue??
 
 ## Still To Add
