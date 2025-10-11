@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs as QtDialogs
 import org.kde.plasma.components as PlasmaComponents3
@@ -8,6 +9,7 @@ import org.kde.iconthemes as KIconThemes // IconDialog
 ColumnLayout {
 	id: tileEditorView
 	Layout.alignment: Qt.AlignTop
+    anchors.fill: parent
 
 	AppObject {
 		id: appObj
@@ -31,6 +33,9 @@ ColumnLayout {
 
 
 	RowLayout {
+		anchors.fill: parent
+		width: config.appListWidth
+
 		PlasmaExtras.Heading {
 			Layout.fillWidth: true
 			level: 2
@@ -53,16 +58,19 @@ ColumnLayout {
 
 	PlasmaComponents3.ScrollView {
 		id: scrollView
+		ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 		Layout.fillHeight: true
 		Layout.fillWidth: true
 
+		contentWidth: scrollView.availableWidth
+		
 		ColumnLayout {
 			id: scrollContent
-			Layout.fillWidth: true
-			width: scrollView.availableWidth
-
+			//Layout.fillWidth: true
+			//width: scrollView.availableWidth
+			width: config.appListWidth
+				
 			TileEditorField {
-				// visible: appObj.isLauncher
 				title: i18n("Url")
 				key: 'url'
 			}
@@ -129,6 +137,7 @@ ColumnLayout {
 			}
 		}
 	}
+
 
 	function show() {
 		if (stackView.currentItem != tileEditorView) {
