@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
-//import org.kde.draganddrop 2.0
+import org.kde.draganddrop as DragAndDrop
 import "Utils.js" as Utils
 
 DropArea {
@@ -52,44 +52,36 @@ DropArea {
 		// console.log('onEntered', drag)
 		dragTick(drag)
 	}
+
 	onPositionChanged: drag => {
 		// console.log('onPositionChanged', drag)
 		dragTick(drag)
 	}
+
 	onExited: drag => {
 		// console.log('onExited')
 		resetDragHover()
 	}
 
-
-
-		onDropped: drop => {
-		 //console.log('onDropped', draggedItem)
-		 dragTick(drop)
+	onDropped: drop => {
+		//console.log('onDropped', draggedItem)
+	 	dragTick(drop)
 		if (canDrop) {
-		if (draggedItem) {
-			
+			if (draggedItem) {
 				tileGrid.moveTile(draggedItem, dropHoverX, dropHoverY)
-			    tileGrid.resetDrag()
-			
-			
-			// event.accept(Qt.MoveAction)
-		} else if (addedItem) {
-			addedItem.x = dropHoverX
-			addedItem.y = dropHoverY
-			tileGrid.tileModel.push(addedItem)
-			tileGrid.tileModelChanged()
-			tileGrid.resetDrag()
-			
-		}
+	    		tileGrid.resetDrag()
+				// event.accept(Qt.MoveAction)
+			} else if (addedItem) {
+				addedItem.x = dropHoverX
+				addedItem.y = dropHoverY
+				tileGrid.tileModel.push(addedItem)
+				tileGrid.tileModelChanged()
+				tileGrid.resetDrag()
+			}
 		}
 		tileGrid.resetDrag()
-		
 	}
 
-
-	 
-	
 
 	// Drag and Drop functions
 	function resetDragHover() {
@@ -99,11 +91,13 @@ DropArea {
 		scrollDownArea.containsDrag = false
 		addedItem = null
 	}
+
 	function resetDrag() {
 		resetDragHover()
 		isDragging = false
 		draggedIndex = -1
 	}
+	
 	function startDrag(index) {
 		draggedIndex = index
 		dropHoverX = draggedItem.x
@@ -210,21 +204,10 @@ DropArea {
 			if (event.keys && event.keys.indexOf('favoriteId') >= 0) {
 				var url = event.getDataAsString('favoriteId')
 				url = Utils.parseDropUrl(url)
-				//console.log('onDragStarted -> ', JSON.stringify(draggedItem))
 			} else {
 				var url = event.urls[0]
-				// console.log('new addedItem', event.urls, url)
-				url = Utils.parseDropUrl(url)
+				//url = Utils.parseDropUrl(url)
 			}
-			// console.log('new addedItem')
-			// console.log('\t', 'urls', event.urls)
-			// console.log('\t', 'url', url)
-			// console.log('\t', 'keys', event.keys)
-			// for (var i = 0; i < event.keys.length; i++) {
-			// 	var key = event.keys[i]
-			// 	var value = event.getDataAsString(key)
-			// 	console.log('\t', 'mimeData', key, value)
-			// }
 
 			addedItem = newTile(url)
 			dropHoverX = modelX
@@ -488,7 +471,7 @@ DropArea {
 							} else if (cellItem.groupAreaHovered) {
 								return "#8848395d" // purple
 							} else {
-								return "transparent"
+								return "transparent" // empty cell
 							}
 						}
 						border.width: 1
@@ -723,7 +706,7 @@ DropArea {
 	function addTile(x, y, props) {
 		var tile = newTile("")
 		parseTileXY(tile, x, y)
-		if (typeof props !== "undefined") {
+		if (typeof props !== "undefined") {													//na te kijken !!!!
 			var keys = Object.keys(props)
 			for (var i = 0; i < keys.length; i++) {
 				var key = keys[i]
