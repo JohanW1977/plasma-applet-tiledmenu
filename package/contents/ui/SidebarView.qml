@@ -56,8 +56,6 @@ Item {
 				//visible: checked || plasmoid.configuration.defaultAppListView == 'TilesOnly'
 			}
 
-			
-			
 			SidebarViewButton {
 				appletIconName: "view-list-alphabetically"
 				text: i18n("Alphabetical")
@@ -68,7 +66,7 @@ Item {
 			SidebarViewButton {
 				appletIconName: 'view-list-categorically'
 				text: i18n("Categories")
-				onClicked:  appsView.showAppsCategorically()
+				onClicked: appsView.showAppsCategorically()
 				checked: searchView.showingAppsCategorically
 			}
 			// SidebarItem {
