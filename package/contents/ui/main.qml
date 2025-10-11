@@ -2,12 +2,9 @@ import QtQuick
 import QtQuick.Layouts
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
-
 import org.kde.plasma.plasmoid
 import org.kde.plasma.private.kicker as Kicker
 import org.kde.coreaddons as KCoreAddons
-// import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
-
 import "lib"
 
 PlasmoidItem {
@@ -77,6 +74,7 @@ PlasmoidItem {
 			}
 		}
 	}
+
 	function logObj(label, obj) {
 		// if (obj && typeof obj === 'object') {
 		//  console.log(label, Object.keys(obj))
@@ -103,14 +101,21 @@ PlasmoidItem {
 	}
 
 	hideOnWindowDeactivate: !widget.userConfiguring
+
 	activationTogglesExpanded: true
+
 	onExpandedChanged: function(expanded) {
 		if (expanded) {
 			search.query = ""
 			search.applyDefaultFilters()
 			// config.showSearch = false
 			// TODO popup is an invalid reference here for some reason
-			fullRepresentationItem.searchView.searchField.forceActiveFocus()
+
+			//fullRepresentationItem.searchView.searchField.forceActiveFocus()
+			if (fullRepresentationItem?.searchView?.searchField) {
+    			fullRepresentationItem.searchView.searchField.forceActiveFocus()
+			}
+
 			fullRepresentationItem.searchView.showDefaultView()
 
 			// Debug TileEditorView
@@ -122,15 +127,12 @@ PlasmoidItem {
 			justOpenedTimer.start()
 		}
 	}
+
 	Timer {
 		id: justOpenedTimer
 		repeat: false
 		interval: 600
 	}
-
-	// property alias searchResultsView: popup.searchView.searchResultsView
-	// width: popup.width
-	// height: popup.height
 
 	fullRepresentation: Popup {
 		id: popup
@@ -147,16 +149,18 @@ PlasmoidItem {
 			//console.log('popup.size', width, height, 'width')
 			// resizeToFit.run()
 		}
+
 		onHeightChanged: {
 			// console.log('popup.size', width, height, 'height')
-			// resizeHeight.restart()
+			resizeHeight.restart()
 		}
 
 		// Make popup resizeable like default Kickoff widget.
 		// The FullRepresentation must have an appletInterface property.
 		// https://invent.kde.org/plasma/plasma-desktop/-/commit/23c4e82cdcb6c7f251c27c6eefa643415c8c5927
 		// https://invent.kde.org/frameworks/plasma-framework/-/merge_requests/500/diffs
-		readonly property var appletInterface: Plasmoid.self
+		// readonly property var appletInterface: Plasmoid.self // PLasma 5
+		readonly property var appletInterface: Plasmoid			// Plasma 6
 
 		Timer {
 			id: resizeHeight
@@ -174,6 +178,7 @@ PlasmoidItem {
 				}
 			}
 		}
+
 		Timer {
 			id: resizeToFit
 			interval: attemptsLeft == attempts ? 200 : 100
@@ -255,8 +260,4 @@ PlasmoidItem {
 			onTriggered: processRunner.runMenuEditor()
 		}
 	]
-
-	Component.onCompleted: {
-		// Plasmoid.internalAction("configure").trigger() // Uncomment to open the config window on load.
-	}
 }
