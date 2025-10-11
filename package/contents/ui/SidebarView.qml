@@ -1,137 +1,231 @@
 import QtQuick
-import QtQuick.Layouts
-import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.extras as PlasmaExtras
-import org.kde.config as KConfig
-import org.kde.draganddrop as DragAndDrop
-import org.kde.kcmutils as KCM // KCMLauncher
-import "Utils.js" as Utils
 
 Item {
-	id: sidebarView
-	anchors.left: parent.left
-	anchors.top: parent.top
-	anchors.bottom: parent.bottom
-	z: 1
+	id: searchView
+	//implicitWidth: config.appAreaWidth				// ? why not making it the same width as tha appslist ?
+	implicitWidth: config.appListWidth				    // tilegrid stays on the same place when you activate edit of a tile
 
-	width: sidebarMenu.width
-	Behavior on width { NumberAnimation { duration: 100 } }
+	// Behavior on implicitWidth {
+	// 	NumberAnimation { duration: 400 }
+	// }
 
-	DragAndDrop.DropArea {
-		anchors.fill: sidebarMenu
+	visible: opacity > 0
+	opacity: config.showSearch ? 1 : 0
+	// Behavior on opacity {
+	// 	NumberAnimation { duration: 400 }
+	// }
 
-		onDrop: {
-			if (event && event.mimeData && event.mimeData.url) {
-				var url = event.mimeData.url.toString()
-				url = Utils.parseDropUrl(url)
-				appsModel.sidebarModel.addFavorite(url, 0)
+	Connections {
+		target: search
+		function onIsSearchingChanged() {
+			if (search.isSearching) {
+				searchView.showSearchView()
 			}
 		}
 	}
+	clip: true
 
-	SidebarMenu {
-		id: sidebarMenu
-		anchors.left: parent.left
-		anchors.top: parent.top
-		anchors.bottom: parent.bottom
+	property alias searchResultsView: searchResultsView
+	property alias appsView: appsView
+	property alias tileEditorView: tileEditorViewLoader.item
+	property alias tileEditorViewLoader: tileEditorViewLoader
+	property alias searchField: searchField
+	property alias jumpToLetterView: jumpToLetterView
 
+	readonly property bool showingOnlyTiles: !config.showSearch
+	readonly property bool showingAppList: stackView.currentItem == appsView || stackView.currentItem == jumpToLetterView
+	readonly property bool showingAppsAlphabetically: config.showSearch && appsModel.order == "alphabetical" && showingAppList
+	readonly property bool showingAppsCategorically: config.showSearch && appsModel.order == "categories" && showingAppList
+	readonly property bool showSearchField: config.hideSearchField ? !!searchField.text : true
 
-		ColumnLayout {
-			id: sidebarMenuTop
-			spacing: 0
+	readonly property bool searchOnTop: config.searchOnTop
 
-			// SidebarItem {
-			// 	icon.name: 'open-menu-symbolic'
-			// 	text: i18n("Menu")
-			// 	closeOnClick: false
-			// 	onClicked: sidebarMenu.open = !sidebarMenu.open
-			// 	zoomOnPush: expanded
-			// }
+	function showDefaultView() {
+		//console.log('asd ' , plasmoid.configuration.defaultAppListView)
+		var defView = plasmoid.configuration.defaultAppListView
+		if (defView == 'Alphabetical') {
+			appsView.showAppsAlphabetically()
+			config.showSearch = true
+		} else if (defView == 'Categories') {
+			appsView.showAppsCategorically()
+			config.showSearch = true
+		} else if (defView == 'JumpToLetter') {
+			jumpToLetterView.showLetters()
+			config.showSearch = true
+		} else if (defView == 'JumpToCategory') {
+			jumpToLetterView.showCategories()
+			config.showSearch = true
+		} else if (defView == 'TilesOnly') {
+			searchView.showTilesOnly()
+		}
+		
+	}
 
-			SidebarViewButton {
-				appletIconName: "view-tilesonly"
-				text: i18n("Tiles Only")
-				onClicked: searchView.showTilesOnly()
-				checked: searchView.showingOnlyTiles
-				//visible: checked || plasmoid.configuration.defaultAppListView == 'TilesOnly'
-			}
-
-			SidebarViewButton {
-				appletIconName: "view-list-alphabetically"
-				text: i18n("Alphabetical")
-				onClicked: appsView.showAppsAlphabetically()
-				checked: searchView.showingAppsAlphabetically
-			}
+	function showTilesOnly() {
+		if (!showingAppList) {
+			// appsView.show(stackView.noTransition)
+		
+			appsView.show()
 			
-			SidebarViewButton {
-				appletIconName: 'view-list-categorically'
-				text: i18n("Categories")
-				onClicked: appsView.showAppsCategorically()
-				checked: searchView.showingAppsCategorically
-			}
-			// SidebarItem {
-			// 	icon.name: 'system-search-symbolic'
-			// 	text: i18n("Search")
-			// 	onClicked: searchResultsView.showDefaultSearch()
-			// 	// checked: stackView.currentItem == searchResultsView
-			// 	// checkedEdge: Qt.RightEdge
-			// 	// checkedEdgeWidth: 4 * Screen.devicePixelRatio // Twice as thick as normal
-			// }
 		}
-		ColumnLayout {
-			anchors.bottom: parent.bottom
-			spacing: 0
-
-			SidebarItem {
-				id: userMenuButton
-				icon.name: kuser.hasFaceIcon ? kuser.faceIconUrl : 'user-identity'
-				text: kuser.fullName
-				onClicked: {
-					userMenu.toggleOpen()
-				}
-				SidebarContextMenu {
-					id: userMenu
-					visualParent: userMenuButton
-					model: appsModel.sessionActionsModel
-
-					PlasmaExtras.MenuItem {
-						icon: 'system-users'
-						text: i18n("User Manager")
-						onClicked: KCM.KCMLauncher.open('kcm_users')
-						visible: KConfig.KAuthorized.authorizeControlModule('kcm_users')
-					}
-
-					// ... appsModel.sessionActionsModel
-				}
-			}
-
-			SidebarFavouritesView {
-				model: appsModel.sidebarModel
-				maxHeight: sidebarMenu.height - sidebarMenuTop.height - 2 * config.flatButtonSize
-			}
-
-			SidebarItem {
-				id: powerMenuButton
-				icon.name: 'system-shutdown-symbolic'
-				text: i18n("Power")
-				onClicked: {
-					powerMenu.toggleOpen()
-				}
-				SidebarContextMenu {
-					id: powerMenu
-					visualParent: powerMenuButton
-					model: appsModel.powerActionsModel
-				}
-			}
-		}
-
-		onFocusChanged: {
-			logger.debug('searchView.onFocusChanged', focus)
-			if (!focus) {
-				open = false
-			}
-		}
+		plasmoid.configuration.defaultAppListView = 'TilesOnly'
+		config.showSearch = false
 	}
 
+	function showSearchView() {
+		config.showSearch = true
+	}
 
+	states: [
+		State {
+			name: "searchOnTop"
+			when: searchOnTop
+			PropertyChanges {
+				target: stackViewContainer
+				anchors.topMargin: searchField.visible ? searchField.height: 0
+			}
+			PropertyChanges {
+				target: searchField
+				anchors.top: searchField.parent.top
+				
+			}
+		},
+		State {
+			name: "searchOnBottom"
+			when: !searchOnTop
+			PropertyChanges {
+				target: stackViewContainer
+				anchors.bottomMargin: searchField.visible ? searchField.height : 0
+			}
+			PropertyChanges {
+				target: searchField
+				anchors.top: stackViewContainer.bottom
+				//anchors.top: stackViewContainerplasmoid.configuration.defaultAppListView.bottom
+				
+			}
+		}
+	]
+
+
+	Item {
+		id: stackViewContainer
+		anchors.fill: parent
+
+		SearchResultsView {
+			id: searchResultsView
+			visible: false
+
+			Connections {
+				target: search
+				function onQueryChanged() {
+					if (search.query.length > 0 && stackView.currentItem != searchResultsView) {
+						stackView.replace(searchResultsView)
+					}
+					searchResultsView.filterViewOpen = false
+				}
+			}
+            
+            
+          
+			onVisibleChanged: {
+				if (!visible) { // !stackView.currentItem
+					search.query = ""
+				}
+			}
+
+			function showDefaultSearch() {
+				if (stackView.currentItem != searchResultsView) {
+					stackView.replace(searchResultsView)
+				}
+				search.applyDefaultFilters()
+			}
+		}
+		
+		AppsView {
+			id: appsView
+			visible: false
+
+			function showAppsAlphabetically() {
+				appsModel.order = "alphabetical"
+				//console.log('config search size', stackViewContainer.top, ' this ' , appsView.height)
+				plasmoid.configuration.defaultAppListView = 'Alphabetical'
+				show()
+			}
+
+			function showAppsCategorically() {
+				appsModel.order = "categories"
+				plasmoid.configuration.defaultAppListView = 'Categories'
+				show()
+			}
+
+			function show(animation) {
+				config.showSearch = true
+				if (stackView.currentItem != appsView) {
+					// stackView.delegate = animation || stackView.panUp
+					stackView.replace(appsView)
+				}
+				appsView.scrollToTop()
+			}
+		}
+
+		JumpToLetterView {
+			id: jumpToLetterView
+			visible: false
+			
+			function showLetters() {
+				appsModel.order = "alphabetical"
+				
+				show()
+			}
+
+			function showCategories() {
+				appsModel.order = "categories"
+				show()
+			}
+
+			function show() {
+				config.showSearch = true
+				if (stackView.currentItem != jumpToLetterView) {
+					// stackView.delegate = stackView.zoomOut
+					stackView.replace(jumpToLetterView)
+				}
+			}
+		}
+
+		Loader {
+			id: tileEditorViewLoader
+			source: "TileEditorView.qml"
+			visible: false
+			active: false
+			//width: config.appListWidth															//???????
+			// asynchronous: true
+			function open(tile) {
+				config.showSearch = true
+				active = true
+				item.open(tile)
+			}
+			readonly property bool isCurrentView: stackView.currentItem == tileEditorView
+			onIsCurrentViewChanged: {
+				config.isEditingTile = isCurrentView
+			}
+		}
+
+		SearchStackView {
+			id: stackView
+			anchors.fill: parent
+			initialItem: appsView
+		}
+	}
+    
+
+	SearchField {
+		id: searchField
+		visible: !config.isEditingTile && searchView.showSearchField
+		height: config.searchFieldHeight
+		width: parent.width - 40
+		anchors.left: parent.left
+		//anchors.right: parent.right 
+
+		listView: stackView.currentItem && stackView.currentItem.listView ? stackView.currentItem.listView : []
+	}
 }
