@@ -80,7 +80,7 @@ LibConfig.FormKCM {
 		text: i18n("Popup")
 	}
 
-	LibConfig.CheckBox {
+	LibConfig.CheckBox {																															// Only works at initial install, doesn't work after reboot
 		text: i18n("Fullscreen")
 		configKey: 'fullscreen'
 	}
@@ -91,7 +91,7 @@ LibConfig.FormKCM {
 		spacing: 0
 		visible: !plasmoid.configuration.fullscreen
 
-		LibConfig.SpinBox {
+		LibConfig.SpinBox {																															// Only works at initial install, doesn't work after reboot
 			configKey: 'favGridCols'
 		}
 
@@ -99,7 +99,7 @@ LibConfig.FormKCM {
 			text: " x "
 		}
 
-		LibConfig.SpinBox {
+		LibConfig.SpinBox {																															// Only works at initial install, doesn't work after reboot
 			configKey: 'popupHeight'
 			suffix: i18n("px")
 		}
@@ -379,7 +379,8 @@ LibConfig.FormKCM {
 
 	LibConfig.CheckBox {
 		configKey: 'searchOnTop'
-		text: i18n("Search On Top")
+		text: i18n("Checked: Search bn top / Unchecked: Search on bottom")
+		visible: !plasmoid.configuration.hideSearchField
 	}
 
 	LibConfig.SpinBox {
@@ -518,7 +519,7 @@ LibConfig.FormKCM {
 				plasmoid.configuration.searchResultsCustomSort = false
 			}
 		}
-		QQC2.RadioButton {
+		QQC2.RadioButton {																															// Doesn't work yet
 			text: i18n("Split into Categories (Application Menu / Dashboard)")
 			checked: !plasmoid.configuration.searchResultsMerged
 			onClicked: plasmoid.configuration.searchResultsMerged = false
