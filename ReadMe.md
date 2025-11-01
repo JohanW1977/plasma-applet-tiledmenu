@@ -27,7 +27,9 @@ A menu based on Windows 10's Start Menu.
 
 ## Screenshots
 
-<img width="1719" height="851" alt="image" src="https://github.com/user-attachments/assets/bd99a0be-7956-4c7c-8ed8-b5d196a30cf9" />
+<img width="1392" height="732" alt="screenshot03" src="https://github.com/user-attachments/assets/0a6b1b75-54fb-4a4c-8048-0702c74b5bdf" />
+<img width="1397" height="783" alt="screenshot02" src="https://github.com/user-attachments/assets/84a4c9fa-c1f9-4f4c-a0c4-9d91cdca4fcd" />
+<img width="996" height="752" alt="screenshot01" src="https://github.com/user-attachments/assets/63845b22-2da1-40ba-b966-60ef7bcdc2e0" />
 
 ## Theming
 
