@@ -137,23 +137,13 @@ PlasmoidItem {
 	fullRepresentation: Popup {
 		id: popup
 
+		// Plasma 6 bug? Resizing only works at initial instaal of the plasmoid.
+		// Not working anymore after reboot
+
 		Layout.minimumWidth: config.leftSectionWidth
 		Layout.minimumHeight: config.minimumHeight
 		Layout.preferredWidth: config.popupWidth
 		Layout.preferredHeight: config.popupHeight
-
-		 //Layout.minimumHeight: 900 // For quickly testing as a desktop widget
-		// Layout.minimumWidth: 800
-
-		onWidthChanged: {
-			//console.log('popup.size', width, height, 'width')
-			// resizeToFit.run()
-		}
-
-		onHeightChanged: {
-			// console.log('popup.size', width, height, 'height')
-			resizeHeight.restart()
-		}
 
 		// Make popup resizeable like default Kickoff widget.
 		// The FullRepresentation must have an appletInterface property.
@@ -162,58 +152,8 @@ PlasmoidItem {
 		// readonly property var appletInterface: Plasmoid.self // PLasma 5
 		readonly property var appletInterface: Plasmoid			// Plasma 6
 
-		Timer {
-			id: resizeHeight
-			interval: 200
-			onTriggered: {
-				if (!plasmoid.configuration.fullscreen) {
-					// Need to Math.ceil when writing to fix (Issue #71)
-					var dPR = Screen.devicePixelRatio
-					var pH2 = height / dPR
-					var pH3 = Math.ceil(pH2)
-					// console.log('pH.set', 'dPR='+dPR, 'pH1='+height, 'pH2='+pH2, 'pH3='+pH3)
-					if (plasmoid.configuration.popupHeight != pH3) {
-						plasmoid.configuration.popupHeight = pH3
-					}
-				}
-			}
-		}
-
-		Timer {
-			id: resizeToFit
-			interval: attemptsLeft == attempts ? 200 : 100
-			repeat: attemptsLeft > 0
-			property int attempts: 10
-			property int attemptsLeft: 10
-
-			function run() {
-				restart()
-				attemptsLeft = attempts
-			}
-
-			onTriggered: {
-				if (plasmoid.configuration.fullscreen) {
-					attemptsLeft = 0
-				} else {
-					var favWidth = Math.max(0, widget.width - config.leftSectionWidth) // 398 // 888-60-430
-					// console.log(favWidth, widget.width, config.leftSectionWidth)
-					// console.log(favWidth / config.cellBoxSize)
-					// var cols = Math.floor(favWidth / config.favColWidth) * 2
-					var cols = Math.floor(favWidth / config.cellBoxSize)
-					if (plasmoid.configuration.favGridCols != cols) {
-						// console.log(plasmoid.configuration.favGridCols, cols)
-						plasmoid.configuration.favGridCols = cols
-					}
-					// Force a reflow since Meta+RightClick+Drag resizing doesn't really play nice with PlasmaCore.Dialog.
-					config.popupWidthChanged()
-					widget.Layout.preferredWidthChanged()
-					attemptsLeft -= 1
-				}
-			}
-		}
 		// Layout.onPreferredWidthChanged: console.log('popup.size', width, height)
 		// Layout.onPreferredHeightChanged: console.log('popup.size', width, height)
-
 
 		onFocusChanged: {
 			if (focus) {
