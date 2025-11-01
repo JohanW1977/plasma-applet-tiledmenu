@@ -22,14 +22,14 @@ MouseArea {
 		anchors.fill: parent
 		visible: !plasmoid.configuration.sidebarFollowsTheme
 		color: config.sidebarBackgroundColor
-		opacity: parent.open ? 1 : 0
+		//opacity: parent.open ? 1 : 0 //disabled, otherwise background color doesn't work
 	}
 
 	Rectangle {
 		anchors.fill: parent
 		visible: plasmoid.configuration.sidebarFollowsTheme
 		color: Kirigami.Theme.backgroundColor
-		opacity: parent.open ? 1 : 0
+		//opacity: parent.open ? 1 : 0 //disabled, otherwise background color doesn't work
 	}
 	KSvg.FrameSvgItem {
 		anchors.fill: parent
