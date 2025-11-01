@@ -2,7 +2,9 @@ import QtQuick
 
 Item {
 	id: searchView
-	implicitWidth: config.appAreaWidth
+	//implicitWidth: config.appAreaWidth				// ? why not making it the same width as tha appslist ?
+	implicitWidth: config.appListWidth				    // tilegrid stays on the same place when you activate edit of a tile
+
 	// Behavior on implicitWidth {
 	// 	NumberAnimation { duration: 400 }
 	// }
