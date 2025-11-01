@@ -19,7 +19,7 @@ A menu based on Windows 10's Start Menu.
       
 ## Bugs
 
-* Switching between "Alphabetical" / "Cathegories" / "Tiles only" initially works, but the pannel width doesn't update after reboot. PLasma Bug? bug 511240
+* Switching between "Alphabetical" / "Cathegories" / "Tiles only" initially works, but the pannel width doesn't update after reboot. Plasma Bug? bug 511240
 
 ## Still To Add
 * Group Tiles.
